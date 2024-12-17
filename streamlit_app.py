@@ -49,6 +49,20 @@ st.header("Global Sales by Genre")
 sales_by_genre = filtered_df.groupby('Genre')['Global_Sales'].sum().reset_index().sort_values(by='Global_Sales', ascending=False)
 st.bar_chart(sales_by_genre.set_index('Genre'))
 
+# additional code 
+
+# Pairplot for Global Sales and Regional Sales
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Create a pair plot for selected numerical features
+sns.pairplot(df[['Global_Sales', 'NA_Sales', 'EU_Sales', 'JP_Sales', 'Other_Sales']])
+plt.suptitle("Pairplot of Global and Regional Sales", y=1.02)
+
+# Show plot
+st.pyplot(plt)
+
+
 
 
 
