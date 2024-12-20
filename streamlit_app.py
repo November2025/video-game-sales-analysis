@@ -63,6 +63,12 @@ plt.suptitle("Pairplot of Global and Regional Sales", y=1.02)
 st.pyplot(plt)
 
 
+import openai
+import streamlit as st
+
+# 
+openai.api_key = st.secrets["openai_api_key"]
+
 
 
 
